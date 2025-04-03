@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Branch Website</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">E&CE</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faculty">Faculties</a></li>
+        <li><a href="#students">Students</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </nav>
+
+    <section class="hero" id="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Electronics & Computer Engineering</h1>
+        <p>Innovate. Create. Excel.</p>
+        <a href="#" class="btn">Explore More</a>
+      </div>
+      <canvas id="particlesCanvas"></canvas>
+      <!-- For optional floating particles -->
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="aboutus.png" alt="About Us Image" />
+        </div>
+        <div class="about-content">
+          <h2>About Us</h2>
+          <p>
+            We are a passionate team of innovators dedicated to pushing the
+            boundaries of Electronics & Computer Engineering. Our goal is to
+            create impactful solutions that bridge technology and real-world
+            challenges.
+          </p>
+          <p>
+            With a strong focus on innovation, research, and collaboration, we
+            strive to equip students and professionals with the skills they need
+            to excel in the tech-driven world.
+          </p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- faculty and staff section -->
+    <section id="faculty" class="faculty-section">
+      <h2>Our Faculties</h2>
+      <div class="faculty-wrapper">
+        <button id="prevBtn" class="scroll-btn">
+          <i class="fas fa-chevron-left"><</i>
+        </button>
+
+        <div class="faculty-container">
+          <div class="faculty-track">
+            <div class="faculty-card">
+              <div class="card-inner">
+                <img src="faculty-placeholder.jpg" alt="Faculty Name" />
+                <h3>Dr. John Doe</h3>
+                <p>Professor, Computer Science</p>
+              </div>
+            </div>
+
+            <div class="faculty-card">
+              <div class="card-inner">
+                <img src="faculty-placeholder.jpg" alt="Faculty Name" />
+                <h3>Dr. Jane Smith</h3>
+                <p>Head of Department, Electronics</p>
+              </div>
+            </div>
+
+            <div class="faculty-card">
+              <div class="card-inner">
+                <img src="faculty-placeholder.jpg" alt="Faculty Name" />
+                <h3>Prof. Mark Wilson</h3>
+                <p>Assistant Professor, IT</p>
+              </div>
+            </div>
+
+            <div class="faculty-card">
+              <div class="card-inner">
+                <img src="faculty-placeholder.jpg" alt="Faculty Name" />
+                <h3>Prof. Emily Johnson</h3>
+                <p>Lecturer, Embedded Systems</p>
+              </div>
+            </div>
+
+            <div class="faculty-card">
+              <div class="card-inner">
+                <img src="faculty-placeholder.jpg" alt="Faculty Name" />
+                <h3>Dr. Alan Brown</h3>
+                <p>Researcher, AI & ML</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button id="nextBtn" class="scroll-btn">
+          <i class="fas fa-chevron-right">></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Our Students section  -->
+    <!-- Our Students section -->
+    <section id="students" class="students-section">
+      <h2>Our Students</h2>
+
+      <!-- Batch selection buttons -->
+      <div class="batch-buttons">
+        <button class="batch-btn active" data-batch="batch1">
+          Batch 2022-26
+        </button>
+        <button class="batch-btn" data-batch="batch2">Batch 2021-25</button>
+        <button class="batch-btn" data-batch="batch3">Batch 2020-24</button>
+        <button class="batch-btn" data-batch="batch4">Batch 2019-23</button>
+      </div>
+
+      <!-- Student cards container - initially hidden -->
+      <div class="students-container">
+        <!-- Batch 1 Students -->
+        <div class="batch-container active" id="batch1">
+          <div class="students-wrapper">
+            <button class="scroll-btn student-prev-btn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="students-track-container">
+              <div class="students-track">
+                <!-- Student 1 -->
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Aditya Sharma</h3>
+                    <p>Roll: ECE22001</p>
+                    <p>CGPA: 9.2</p>
+                  </div>
+                </div>
+
+                <!-- Student 2 -->
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Priya Patel</h3>
+                    <p>Roll: ECE22002</p>
+                    <p>CGPA: 9.5</p>
+                  </div>
+                </div>
+
+                <!-- Student 3 -->
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Rahul Singh</h3>
+                    <p>Roll: ECE22003</p>
+                    <p>CGPA: 8.9</p>
+                  </div>
+                </div>
+
+                <!-- Student 4 -->
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Ananya Verma</h3>
+                    <p>Roll: ECE22004</p>
+                    <p>CGPA: 9.3</p>
+                  </div>
+                </div>
+
+                <!-- Student 5 -->
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Vikram Reddy</h3>
+                    <p>Roll: ECE22005</p>
+                    <p>CGPA: 8.7</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="scroll-btn student-next-btn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Batch 2 Students -->
+        <div class="batch-container" id="batch2">
+          <div class="students-wrapper">
+            <button class="scroll-btn student-prev-btn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="students-track-container">
+              <div class="students-track">
+                <!-- Student 1 -->
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Neha Gupta</h3>
+                    <p>Roll: ECE21001</p>
+                    <p>CGPA: 9.1</p>
+                  </div>
+                </div>
+
+                <!-- Student 2 -->
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Arjun Kumar</h3>
+                    <p>Roll: ECE21002</p>
+                    <p>CGPA: 8.8</p>
+                  </div>
+                </div>
+
+                <!-- Student 3 -->
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Sneha Iyer</h3>
+                    <p>Roll: ECE21003</p>
+                    <p>CGPA: 9.4</p>
+                  </div>
+                </div>
+
+                <!-- Student 4 -->
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Karan Malhotra</h3>
+                    <p>Roll: ECE21004</p>
+                    <p>CGPA: 8.5</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="scroll-btn student-next-btn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Batch 3 Students -->
+        <div class="batch-container" id="batch3">
+          <!-- Similar structure as above batches -->
+          <div class="students-wrapper">
+            <button class="scroll-btn student-prev-btn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="students-track-container">
+              <div class="students-track">
+                <!-- Sample students for Batch 3 -->
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Rohan Mehta</h3>
+                    <p>Roll: ECE20001</p>
+                    <p>CGPA: 9.0</p>
+                  </div>
+                </div>
+
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Divya Saxena</h3>
+                    <p>Roll: ECE20002</p>
+                    <p>CGPA: 9.2</p>
+                  </div>
+                </div>
+
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Akash Joshi</h3>
+                    <p>Roll: ECE20003</p>
+                    <p>CGPA: 8.7</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="scroll-btn student-next-btn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Batch 4 Students -->
+        <div class="batch-container" id="batch4">
+          <!-- Similar structure as above batches -->
+          <div class="students-wrapper">
+            <button class="scroll-btn student-prev-btn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="students-track-container">
+              <div class="students-track">
+                <!-- Sample students for Batch 4 -->
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Siddharth Roy</h3>
+                    <p>Roll: ECE19001</p>
+                    <p>CGPA: 8.9</p>
+                  </div>
+                </div>
+
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Meera Nair</h3>
+                    <p>Roll: ECE19002</p>
+                    <p>CGPA: 9.3</p>
+                  </div>
+                </div>
+
+                <div class="student-card">
+                  <div class="card-inner">
+                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <h3>Varun Khanna</h3>
+                    <p>Roll: ECE19003</p>
+                    <p>CGPA: 8.6</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="scroll-btn student-next-btn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements section -->
+    <section id="achievements" class="achievements-section">
+      <h2>Achievements</h2>
+
+      <!-- Achievement categories -->
+      <div class="achievement-categories">
+        <button class="category-btn active" data-category="department">
+          Department
+        </button>
+        <button class="category-btn" data-category="faculty">Faculty</button>
+        <button class="category-btn" data-category="students">Students</button>
+        <button class="category-btn" data-category="research">Research</button>
+      </div>
+
+      <!-- Achievement displays -->
+      <div class="achievements-container">
+        <!-- Department Achievements -->
+        <div class="achievement-category active" id="department">
+          <div class="achievement-cards">
+            <!-- Achievement Card 1 -->
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>NAAC A++ Accreditation</h3>
+                <p class="achievement-date">November 2023</p>
+                <p class="achievement-desc">
+                  The ECE department received the highest grade in NAAC
+                  accreditation for excellence in teaching and research
+                  infrastructure.
+                </p>
+              </div>
+            </div>
+
+            <!-- Achievement Card 2 -->
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-medal"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Best Engineering Department Award</h3>
+                <p class="achievement-date">March 2023</p>
+                <p class="achievement-desc">
+                  Recognized by the State Technical Education Board for
+                  outstanding contribution to technical education.
+                </p>
+              </div>
+            </div>
+
+            <!-- Achievement Card 3 -->
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Research Excellence Award</h3>
+                <p class="achievement-date">January 2023</p>
+                <p class="achievement-desc">
+                  Received for publishing the highest number of research papers
+                  among all engineering departments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty Achievements -->
+        <div class="achievement-category" id="faculty">
+          <div class="achievement-cards">
+            <!-- Achievement Card 1 -->
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-user-graduate"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Dr. Jane Smith - IEEE Fellowship</h3>
+                <p class="achievement-date">December 2023</p>
+                <p class="achievement-desc">
+                  Honored with the prestigious IEEE Fellowship for contributions
+                  to embedded systems research.
+                </p>
+              </div>
+            </div>
+
+            <!-- Achievement Card 2 -->
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-book"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Prof. Mark Wilson - Best Paper Award</h3>
+                <p class="achievement-date">October 2023</p>
+                <p class="achievement-desc">
+                  Received the Best Paper Award at the International Conference
+                  on Communication Systems.
+                </p>
+              </div>
+            </div>
+
+            <!-- Achievement Card 3 -->
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Prof. Emily Johnson - Outstanding Teacher</h3>
+                <p class="achievement-date">September 2023</p>
+                <p class="achievement-desc">
+                  Voted as the Outstanding Teacher of the Year by students for
+                  excellence in teaching Embedded Systems.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Students Achievements -->
+        <div class="achievement-category" id="students">
+          <div class="achievement-cards">
+            <!-- Achievement Card 1 -->
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>National Hackathon Winners</h3>
+                <p class="achievement-date">February 2024</p>
+                <p class="achievement-desc">
+                  Team of 4 ECE students won the first prize at the National IoT
+                  Hackathon organized by TechMinds India.
+                </p>
+              </div>
+            </div>
+
+            <!-- Achievement Card 2 -->
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Robotics Competition</h3>
+                <p class="achievement-date">November 2023</p>
+                <p class="achievement-desc">
+                  Second place in the Inter-College Robotics Competition held at
+                  IIT Delhi.
+                </p>
+              </div>
+            </div>
+
+            <!-- Achievement Card 3 -->
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Highest Placement Rate</h3>
+                <p class="achievement-date">June 2023</p>
+                <p class="achievement-desc">
+                  ECE department achieved 95% placement rate with average
+                  package of 8.5 LPA for the 2023 batch.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Research Achievements -->
+        <div class="achievement-category" id="research">
+          <div class="achievement-cards">
+            <!-- Achievement Card 1 -->
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-microscope"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Patent Granted</h3>
+                <p class="achievement-date">December 2023</p>
+                <p class="achievement-desc">
+                  Patent granted for "Novel Approach to Low-Power IoT Devices"
+                  developed by the department's research team.
+                </p>
+              </div>
+            </div>
+
+            <!-- Achievement Card 2 -->
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Research Funding</h3>
+                <p class="achievement-date">August 2023</p>
+                <p class="achievement-desc">
+                  Received ₹1.5 Crore research grant from DST for "Advanced
+                  Semiconductor Research Laboratory".
+                </p>
+              </div>
+            </div>
+
+            <!-- Achievement Card 3 -->
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Industry Collaboration</h3>
+                <p class="achievement-date">July 2023</p>
+                <p class="achievement-desc">
+                  Established research collaboration with Intel for
+                  next-generation processor architecture development.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- gallery -->
+    <section class="gallery-section" id="gallery">
+      <h2 class="gallery-title">Gallery</h2>
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="gallery-image.png" alt="ECE Event 1" />
+        </div>
+        <div class="gallery-item">
+          <img src="gallery-image.png" alt="ECE Event 2" />
+        </div>
+        <div class="gallery-item">
+          <img src="gallery-image.png" alt="ECE Event 3" />
+        </div>
+        <div class="gallery-item">
+          <img src="gallery-image.png" alt="ECE Event 4" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+    </div>
+
+    <!-- contact section -->
+    <section id="contact" class="contact-section">
+      <h2>Contact Us</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <p>
+            <strong>Department of Electronics & Computer Engineering</strong>
+          </p>
+          <p>PICT, Pune, Maharashtra, India</p>
+          <p>Email: ece.department@pict.edu</p>
+          <p>Phone: +91 98765 43210</p>
+        </div>
+
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.493105990883!2d73.85674271527536!3d18.520430474488847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c065d3185a81%3A0x827cb736c691d8c1!2sPune%20Institute%20of%20Computer%20Technology!5e0!3m2!1sen!2sin!4v1645012567890!5m2!1sen!2sin"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="particles.js"></script>
+  <script src="script.js"></script>
+</html>

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Miniver&display=swap');
+
+:root {
+  --primary-color: #020202;
+  --secondary-color: #0D324D;
+  --accent-color-1: #7F5A83;
+  --accent-color-2: #A188A6;
+  --accent-color-3: #9DA2AB;
+  --background-color: var(--primary-color);
+  --text-color: white;
+  --font-family: 'Roboto Condensed', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
