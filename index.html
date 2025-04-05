@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Branch Website</title>
+    <link rel="stylesheet" href="discussion.css" />
+    
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="notics.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -58,6 +61,84 @@
         </div>
       </div>
     </section>
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    loadNotices();
+});
+
+const notices = [
+    { title: "Exam Schedule Released", description: "Semester exams start from April 15th. Check official site for details.", category: "Academic", date: "2025-04-01" },
+    { title: "Hackathon Event", description: "Join the college Hackathon on April 10th. Prizes for winners!", category: "Events", date: "2025-04-02" },
+    { title: "Placement Drive", description: "TCS and Infosys are conducting placement drives next week. Prepare accordingly.", category: "Placements", date: "2025-04-03" },
+    { title: "Holiday Notice", description: "The university will remain closed on April 14th for the festival celebration.", category: "Other", date: "2025-04-04" }
+];
+
+function loadNotices() {
+    const container = document.getElementById("notices-container");
+    container.innerHTML = "";
+
+    notices.forEach((notice, index) => {
+        setTimeout(() => {
+            const card = document.createElement("div");
+            card.className = "notice-card";
+            card.dataset.category = notice.category;
+            card.innerHTML = `
+                <h3>📌 ${notice.title}</h3>
+                <p>${notice.description}</p>
+                <p><small>📅 ${notice.date} | 🏷 ${notice.category}</small></p>
+            `;
+            container.appendChild(card);
+        }, index * 100);
+    });
+}
+
+document.getElementById("search").addEventListener("keyup", function () {
+    let filter = this.value.toLowerCase();
+    document.querySelectorAll(".notice-card").forEach(card => {
+        let text = card.textContent.toLowerCase();
+        card.style.display = text.includes(filter) ? "block" : "none";
+    });
+});
+
+function filterNotices() {
+    let filter = document.getElementById("categoryFilter").value;
+    document.querySelectorAll(".notice-card").forEach(card => {
+        card.style.display = (!filter || card.dataset.category === filter) ? "block" : "none";
+    });
+}
+</script>
+
+
+    <section class="notice-board">
+      <h2 class="gallery-title">📢 Latest Announcements</h2><br>
+  
+      <div class="notice-filters">
+          <input type="text" id="search" placeholder="🔍 Search notices..." />
+          <select id="categoryFilter" onchange="filterNotices()">
+              <option value="">📂 All Categories</option>
+              <option value="Academic">🎓 Academic</option>
+              <option value="Events">🎉 Events</option>
+              <option value="Placements">🏢 Placements</option>
+              <option value="Other">📌 Other</option>
+          </select>
+      </div>
+  
+      <div id="notices-container" class="notice-container"></div>
+  </section>
+
+
+
+
+
+
+
+
+
+
 
     <!-- faculty and staff section -->
     <section id="faculty" class="faculty-section">
@@ -351,6 +432,82 @@
         </div>
       </div>
     </section>
+
+<script>
+  let likesUpParent = document.getElementsByClassName("unique_comment-likes-up");
+let likesDownParent = document.getElementsByClassName("unique_comment-likes-down");
+
+let likesEl = [];
+for(let i = 0; i < likesUpParent.length; i++) {
+    let likesUp = likesUpParent[i].getElementsByTagName("img")[0];
+    let likesDown = likesDownParent[i].getElementsByTagName("img")[0];
+
+    likesEl.push(likesUp, likesDown);
+}
+
+likesEl.forEach(el => {
+    el.addEventListener("click", function() {
+        let likesClosestCountEl = this.parentElement.getElementsByTagName("span")[0];
+        let likesCount = likesClosestCountEl.innerText;
+
+        if(likesCount.trim().length === 0) {
+            let likesCount = 0;
+        }
+
+        likesClosestCountEl.innerText = +likesCount + +1;
+
+    })
+})
+
+  </script>
+ 
+ 
+ <section id="unique-comment-module">
+      <link rel="stylesheet" href="discussion.css" />
+      <h2 class="gallery-title">Discussion</h2><br>
+      <ul id="unique-comment-list">
+          <li class="unique-comment-item">
+              <div class="unique-comment">
+                  <div class="unique-comment-img">
+                      <img src="https://rvs-comment-module.vercel.app/Assets/User Avatar.png" alt="User Avatar">
+                  </div>
+                  <div class="unique-comment-content">
+                      <div class="unique-comment-details">
+                          <h4 class="unique-comment-name">Adamsdavid</h4>
+                          <span class="unique-comment-log">20 hours ago</span>
+                      </div>
+                      <div class="unique-comment-desc">
+                          <p>I genuinely think that Codewell's community is AMAZING. It's just starting out but the templates on there are amazing.</p>
+                      </div>
+                      <div class="unique-comment-data">
+                          <div class="unique-comment-likes">
+                              <div class="unique-comment-likes-up">
+                                  <img src="https://rvs-comment-module.vercel.app/Assets/Up.svg" alt="Like">
+                                  <span>2</span>
+                              </div>
+                              <div class="unique-comment-likes-down">
+                                  <img src="https://rvs-comment-module.vercel.app/Assets/Down.svg" alt="Dislike">
+                                  <span></span>
+                              </div>
+                          </div>
+                          <div class="unique-comment-reply">
+                              <a href="#!">Reply</a>
+                          </div>
+                          <div class="unique-comment-report">
+                              <a href="#!">Report</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </li>
+      </ul>
+  </section>
+  
+
+
+
+
+
 
     <!-- Achievements section -->
     <section id="achievements" class="achievements-section">
