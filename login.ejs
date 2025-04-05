@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <link href="/styles/login.css" rel="stylesheet">
+    </head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <!-- Left Logo Box -->
+            <div class="logo-box">
+                <h1>WELCOME</h1>
+                <h3>Department of Electronics & Computer Engineering</h3>
+                <h3>Code. Innovate. Transform.</h3>
+            </div>
+
+            <!-- Right Login Box -->
+            <div class="login-box">
+                <h2>Login</h2><br><br>
+                <form action="/login" method="post">
+                    <div class="input-container">
+                        <input type="text" id="username" name="username" required>
+                        <label for="username">Username</label>
+                    </div><br><br>
+                    <div class="input-container">
+                        <input type="password" id="password" name="password" required>
+                        <label for="password">Password</label>
+                    </div><br><br>
+                    <button type="submit">Log in</button>
+                </form>
+                <a href="#">Forgot Your Password?</a>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>

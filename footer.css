@@ -1,0 +1,288 @@
+/* Professional Footer Styling with Purple Theme */
+footer {
+    background-color: #4B2E83; /* Deep purple (similar to University of Washington purple) */
+    color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Brand Section */
+.footer-brand {
+    flex: 1;
+    min-width: 220px;
+    max-width: 300px;
+}
+
+.footer-brand img {
+    width: 130px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.tagline {
+    font-size: 14px;
+    font-style: italic;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #f8f9fa;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+}
+
+.social-links a:hover {
+    background-color: #8867C7; /* Lighter purple for hover */
+    transform: translateY(-2px);
+}
+
+/* Contact Information Section */
+.footer-contact {
+    flex: 1.5;
+    min-width: 280px;
+}
+
+.footer-contact h4, .footer-links h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-contact h4::after, .footer-links h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #B7A5D9; /* Light lavender accent */
+}
+
+.footer-contact address {
+    font-style: normal;
+    line-height: 1.6;
+}
+
+.footer-contact p {
+    margin-bottom: 12px;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: #B7A5D9; /* Light lavender for icons */
+    min-width: 16px;
+    margin-top: 4px;
+}
+
+.footer-contact a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-contact a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.map-link {
+    color: #D4C6E7; /* Soft lavender for map link */
+    font-weight: 500;
+}
+
+/* Links Section */
+.footer-links {
+    flex: 1;
+    min-width: 220px;
+}
+
+.links-columns {
+    display: flex;
+    gap: 30px;
+}
+
+.links-column {
+    flex: 1;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    padding-left: 2px;
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #B7A5D9; /* Light lavender for underline */
+    transition: width 0.2s ease;
+}
+
+.footer-links a:hover::before {
+    width: 100%;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background-color: #341F6A; /* Darker purple for contrast */
+    padding: 20px 0;
+    font-size: 13px;
+    color: #b0b0b0;
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-legal {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-legal a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+    color: #ffffff;
+}
+
+.separator {
+    margin: 0 10px;
+    color: #6c5b9c; /* Medium purple for separators */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    .footer-container {
+        gap: 30px;
+    }
+    
+    .footer-brand {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    .footer-contact h4::after, .footer-links h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-contact p {
+        justify-content: center;
+    }
+    
+    .footer-links {
+        width: 100%;
+    }
+    
+    .links-columns {
+        justify-content: center;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-legal {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .links-columns {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .links-column {
+        text-align: center;
+    }
+    
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+    
+    .separator:last-of-type {
+        display: none;
+    }
+}
