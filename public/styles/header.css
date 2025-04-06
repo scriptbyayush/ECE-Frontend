@@ -6,23 +6,24 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(
-    135deg,
-    var(--secondary-color),
-    var(--accent-color-1)
-  );
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
+
 
 .logo {
   font-size: 24px;
   font-weight: bold;
   color: var(--accent-color-2);
+}
+
+.logo img{
+  width: 1.6rem;
+  margin-right: 0.2rem;
+  border-radius: 5px;
 }
 
 .nav-links {
