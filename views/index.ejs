@@ -25,7 +25,7 @@
     <section class="about" id="about">
       <div class="about-container">
         <div class="about-image">
-          <img src="aboutus.png" alt="About Us Image" />
+          <img src="/assets/images/aboutus.png" alt="About Us Image" />
         </div>
         <div class="about-content">
           <h2>About Us</h2>
@@ -45,27 +45,48 @@
       </div>
     </section>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        loadNotices();
+      });
 
+      const notices = [
+        {
+          title: "Exam Schedule Released",
+          description:
+            "Semester exams start from April 15th. Check official site for details.",
+          category: "Academic",
+          date: "2025-04-01",
+        },
+        {
+          title: "Hackathon Event",
+          description:
+            "Join the college Hackathon on April 10th. Prizes for winners!",
+          category: "Events",
+          date: "2025-04-02",
+        },
+        {
+          title: "Placement Drive",
+          description:
+            "TCS and Infosys are conducting placement drives next week. Prepare accordingly.",
+          category: "Placements",
+          date: "2025-04-03",
+        },
+        {
+          title: "Holiday Notice",
+          description:
+            "The university will remain closed on April 14th for the festival celebration.",
+          category: "Other",
+          date: "2025-04-04",
+        },
+      ];
 
+      function loadNotices() {
+        const container = document.getElementById("notices-container");
+        container.innerHTML = "";
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    loadNotices();
-});
-
-const notices = [
-    { title: "Exam Schedule Released", description: "Semester exams start from April 15th. Check official site for details.", category: "Academic", date: "2025-04-01" },
-    { title: "Hackathon Event", description: "Join the college Hackathon on April 10th. Prizes for winners!", category: "Events", date: "2025-04-02" },
-    { title: "Placement Drive", description: "TCS and Infosys are conducting placement drives next week. Prepare accordingly.", category: "Placements", date: "2025-04-03" },
-    { title: "Holiday Notice", description: "The university will remain closed on April 14th for the festival celebration.", category: "Other", date: "2025-04-04" }
-];
-
-function loadNotices() {
-    const container = document.getElementById("notices-container");
-    container.innerHTML = "";
-
-    notices.forEach((notice, index) => {
-        setTimeout(() => {
+        notices.forEach((notice, index) => {
+          setTimeout(() => {
             const card = document.createElement("div");
             card.className = "notice-card";
             card.dataset.category = notice.category;
@@ -75,110 +96,43 @@ function loadNotices() {
                 <p><small>📅 ${notice.date} | 🏷 ${notice.category}</small></p>
             `;
             container.appendChild(card);
-        }, index * 100);
-    });
-}
+          }, index * 100);
+        });
+      }
 
-document.getElementById("search").addEventListener("keyup", function () {
-    let filter = this.value.toLowerCase();
-    document.querySelectorAll(".notice-card").forEach(card => {
-        let text = card.textContent.toLowerCase();
-        card.style.display = text.includes(filter) ? "block" : "none";
-    });
-});
+      document.getElementById("search").addEventListener("keyup", function () {
+        let filter = this.value.toLowerCase();
+        document.querySelectorAll(".notice-card").forEach((card) => {
+          let text = card.textContent.toLowerCase();
+          card.style.display = text.includes(filter) ? "block" : "none";
+        });
+      });
 
-function filterNotices() {
-    let filter = document.getElementById("categoryFilter").value;
-    document.querySelectorAll(".notice-card").forEach(card => {
-        card.style.display = (!filter || card.dataset.category === filter) ? "block" : "none";
-    });
-}
-</script>
-
+      function filterNotices() {
+        let filter = document.getElementById("categoryFilter").value;
+        document.querySelectorAll(".notice-card").forEach((card) => {
+          card.style.display =
+            !filter || card.dataset.category === filter ? "block" : "none";
+        });
+      }
+    </script>
 
     <section class="notice-board">
-      <h2 class="gallery-title">📢 Latest Announcements</h2><br>
-  
+      <h2 class="gallery-title">📢 Latest Announcements</h2>
+      <br />
+
       <div class="notice-filters">
-          <input type="text" id="search" placeholder="🔍 Search notices..." />
-          <select id="categoryFilter" onchange="filterNotices()">
-              <option value="">📂 All Categories</option>
-              <option value="Academic">🎓 Academic</option>
-              <option value="Events">🎉 Events</option>
-              <option value="Placements">🏢 Placements</option>
-              <option value="Other">📌 Other</option>
-          </select>
+        <input type="text" id="search" placeholder="🔍 Search notices..." />
+        <select id="categoryFilter" onchange="filterNotices()">
+          <option value="">📂 All Categories</option>
+          <option value="Academic">🎓 Academic</option>
+          <option value="Events">🎉 Events</option>
+          <option value="Placements">🏢 Placements</option>
+          <option value="Other">📌 Other</option>
+        </select>
       </div>
-  
+
       <div id="notices-container" class="notice-container"></div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-    <!-- faculty and staff section -->
-    <section id="faculty" class="faculty-section">
-      <h2>Our Faculties</h2>
-      <div class="faculty-wrapper">
-        <button id="prevBtn" class="scroll-btn">
-          <i class="fas fa-chevron-left"><</i>
-        </button>
-
-        <div class="faculty-container">
-          <div class="faculty-track">
-            <div class="faculty-card">
-              <div class="card-inner">
-                <img src="faculty-placeholder.jpg" alt="Faculty Name" />
-                <h3>Dr. John Doe</h3>
-                <p>Professor, Computer Science</p>
-              </div>
-            </div>
-
-            <div class="faculty-card">
-              <div class="card-inner">
-                <img src="faculty-placeholder.jpg" alt="Faculty Name" />
-                <h3>Dr. Jane Smith</h3>
-                <p>Head of Department, Electronics</p>
-              </div>
-            </div>
-
-            <div class="faculty-card">
-              <div class="card-inner">
-                <img src="faculty-placeholder.jpg" alt="Faculty Name" />
-                <h3>Prof. Mark Wilson</h3>
-                <p>Assistant Professor, IT</p>
-              </div>
-            </div>
-
-            <div class="faculty-card">
-              <div class="card-inner">
-                <img src="faculty-placeholder.jpg" alt="Faculty Name" />
-                <h3>Prof. Emily Johnson</h3>
-                <p>Lecturer, Embedded Systems</p>
-              </div>
-            </div>
-
-            <div class="faculty-card">
-              <div class="card-inner">
-                <img src="faculty-placeholder.jpg" alt="Faculty Name" />
-                <h3>Dr. Alan Brown</h3>
-                <p>Researcher, AI & ML</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <button id="nextBtn" class="scroll-btn">
-          <i class="fas fa-chevron-right">></i>
-        </button>
-      </div>
     </section>
 
     <!-- Our Students section  -->
@@ -210,7 +164,10 @@ function filterNotices() {
                 <!-- Student 1 -->
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Aditya Sharma</h3>
                     <p>Roll: ECE22001</p>
                     <p>CGPA: 9.2</p>
@@ -220,7 +177,10 @@ function filterNotices() {
                 <!-- Student 2 -->
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Priya Patel</h3>
                     <p>Roll: ECE22002</p>
                     <p>CGPA: 9.5</p>
@@ -230,7 +190,10 @@ function filterNotices() {
                 <!-- Student 3 -->
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Rahul Singh</h3>
                     <p>Roll: ECE22003</p>
                     <p>CGPA: 8.9</p>
@@ -240,7 +203,10 @@ function filterNotices() {
                 <!-- Student 4 -->
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Ananya Verma</h3>
                     <p>Roll: ECE22004</p>
                     <p>CGPA: 9.3</p>
@@ -250,7 +216,10 @@ function filterNotices() {
                 <!-- Student 5 -->
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Vikram Reddy</h3>
                     <p>Roll: ECE22005</p>
                     <p>CGPA: 8.7</p>
@@ -277,7 +246,10 @@ function filterNotices() {
                 <!-- Student 1 -->
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Neha Gupta</h3>
                     <p>Roll: ECE21001</p>
                     <p>CGPA: 9.1</p>
@@ -287,7 +259,10 @@ function filterNotices() {
                 <!-- Student 2 -->
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Arjun Kumar</h3>
                     <p>Roll: ECE21002</p>
                     <p>CGPA: 8.8</p>
@@ -297,7 +272,10 @@ function filterNotices() {
                 <!-- Student 3 -->
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Sneha Iyer</h3>
                     <p>Roll: ECE21003</p>
                     <p>CGPA: 9.4</p>
@@ -307,7 +285,10 @@ function filterNotices() {
                 <!-- Student 4 -->
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Karan Malhotra</h3>
                     <p>Roll: ECE21004</p>
                     <p>CGPA: 8.5</p>
@@ -335,7 +316,10 @@ function filterNotices() {
                 <!-- Sample students for Batch 3 -->
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Rohan Mehta</h3>
                     <p>Roll: ECE20001</p>
                     <p>CGPA: 9.0</p>
@@ -344,7 +328,10 @@ function filterNotices() {
 
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Divya Saxena</h3>
                     <p>Roll: ECE20002</p>
                     <p>CGPA: 9.2</p>
@@ -353,7 +340,10 @@ function filterNotices() {
 
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Akash Joshi</h3>
                     <p>Roll: ECE20003</p>
                     <p>CGPA: 8.7</p>
@@ -381,7 +371,10 @@ function filterNotices() {
                 <!-- Sample students for Batch 4 -->
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Siddharth Roy</h3>
                     <p>Roll: ECE19001</p>
                     <p>CGPA: 8.9</p>
@@ -390,7 +383,10 @@ function filterNotices() {
 
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Meera Nair</h3>
                     <p>Roll: ECE19002</p>
                     <p>CGPA: 9.3</p>
@@ -399,7 +395,10 @@ function filterNotices() {
 
                 <div class="student-card">
                   <div class="card-inner">
-                    <img src="faculty-placeholder.jpg" alt="Student Name" />
+                    <img
+                      src="/assets/images/faculty-placeholder.jpg"
+                      alt="Student Name"
+                    />
                     <h3>Varun Khanna</h3>
                     <p>Roll: ECE19003</p>
                     <p>CGPA: 8.6</p>
@@ -416,81 +415,90 @@ function filterNotices() {
       </div>
     </section>
 
-<script>
-  let likesUpParent = document.getElementsByClassName("unique_comment-likes-up");
-let likesDownParent = document.getElementsByClassName("unique_comment-likes-down");
+    <script>
+      let likesUpParent = document.getElementsByClassName(
+        "unique_comment-likes-up"
+      );
+      let likesDownParent = document.getElementsByClassName(
+        "unique_comment-likes-down"
+      );
 
-let likesEl = [];
-for(let i = 0; i < likesUpParent.length; i++) {
-    let likesUp = likesUpParent[i].getElementsByTagName("img")[0];
-    let likesDown = likesDownParent[i].getElementsByTagName("img")[0];
+      let likesEl = [];
+      for (let i = 0; i < likesUpParent.length; i++) {
+        let likesUp = likesUpParent[i].getElementsByTagName("img")[0];
+        let likesDown = likesDownParent[i].getElementsByTagName("img")[0];
 
-    likesEl.push(likesUp, likesDown);
-}
+        likesEl.push(likesUp, likesDown);
+      }
 
-likesEl.forEach(el => {
-    el.addEventListener("click", function() {
-        let likesClosestCountEl = this.parentElement.getElementsByTagName("span")[0];
-        let likesCount = likesClosestCountEl.innerText;
+      likesEl.forEach((el) => {
+        el.addEventListener("click", function () {
+          let likesClosestCountEl =
+            this.parentElement.getElementsByTagName("span")[0];
+          let likesCount = likesClosestCountEl.innerText;
 
-        if(likesCount.trim().length === 0) {
+          if (likesCount.trim().length === 0) {
             let likesCount = 0;
-        }
+          }
 
-        likesClosestCountEl.innerText = +likesCount + +1;
+          likesClosestCountEl.innerText = +likesCount + +1;
+        });
+      });
+    </script>
 
-    })
-})
-
-  </script>
- 
- 
- <section id="unique-comment-module">
+    <section id="unique-comment-module">
       <link rel="stylesheet" href="discussion.css" />
-      <h2 class="gallery-title">Discussion</h2><br>
+      <h2 class="gallery-title">Discussion</h2>
+      <br />
       <ul id="unique-comment-list">
-          <li class="unique-comment-item">
-              <div class="unique-comment">
-                  <div class="unique-comment-img">
-                      <img src="https://rvs-comment-module.vercel.app/Assets/User Avatar.png" alt="User Avatar">
-                  </div>
-                  <div class="unique-comment-content">
-                      <div class="unique-comment-details">
-                          <h4 class="unique-comment-name">Adamsdavid</h4>
-                          <span class="unique-comment-log">20 hours ago</span>
-                      </div>
-                      <div class="unique-comment-desc">
-                          <p>I genuinely think that Codewell's community is AMAZING. It's just starting out but the templates on there are amazing.</p>
-                      </div>
-                      <div class="unique-comment-data">
-                          <div class="unique-comment-likes">
-                              <div class="unique-comment-likes-up">
-                                  <img src="https://rvs-comment-module.vercel.app/Assets/Up.svg" alt="Like">
-                                  <span>2</span>
-                              </div>
-                              <div class="unique-comment-likes-down">
-                                  <img src="https://rvs-comment-module.vercel.app/Assets/Down.svg" alt="Dislike">
-                                  <span></span>
-                              </div>
-                          </div>
-                          <div class="unique-comment-reply">
-                              <a href="#!">Reply</a>
-                          </div>
-                          <div class="unique-comment-report">
-                              <a href="#!">Report</a>
-                          </div>
-                      </div>
-                  </div>
+        <li class="unique-comment-item">
+          <div class="unique-comment">
+            <div class="unique-comment-img">
+              <img
+                src="https://rvs-comment-module.vercel.app/Assets/User Avatar.png"
+                alt="User Avatar"
+              />
+            </div>
+            <div class="unique-comment-content">
+              <div class="unique-comment-details">
+                <h4 class="unique-comment-name">Adamsdavid</h4>
+                <span class="unique-comment-log">20 hours ago</span>
               </div>
-          </li>
+              <div class="unique-comment-desc">
+                <p>
+                  I genuinely think that Codewell's community is AMAZING. It's
+                  just starting out but the templates on there are amazing.
+                </p>
+              </div>
+              <div class="unique-comment-data">
+                <div class="unique-comment-likes">
+                  <div class="unique-comment-likes-up">
+                    <img
+                      src="https://rvs-comment-module.vercel.app/Assets/Up.svg"
+                      alt="Like"
+                    />
+                    <span>2</span>
+                  </div>
+                  <div class="unique-comment-likes-down">
+                    <img
+                      src="https://rvs-comment-module.vercel.app/Assets/Down.svg"
+                      alt="Dislike"
+                    />
+                    <span></span>
+                  </div>
+                </div>
+                <div class="unique-comment-reply">
+                  <a href="#!">Reply</a>
+                </div>
+                <div class="unique-comment-report">
+                  <a href="#!">Report</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
-  </section>
-  
-
-
-
-
-
+    </section>
 
     <!-- Achievements section -->
     <section id="achievements" class="achievements-section">
@@ -716,16 +724,16 @@ likesEl.forEach(el => {
       <h2 class="gallery-title">Gallery</h2>
       <div class="gallery-container">
         <div class="gallery-item">
-          <img src="gallery-image.png" alt="ECE Event 1" />
+          <img src="/assets/images/gallery-image.png" alt="ECE Event 1" />
         </div>
         <div class="gallery-item">
-          <img src="gallery-image.png" alt="ECE Event 2" />
+          <img src="/assets/images/gallery-image.png" alt="ECE Event 2" />
         </div>
         <div class="gallery-item">
-          <img src="gallery-image.png" alt="ECE Event 3" />
+          <img src="/assets/images/gallery-image.png" alt="ECE Event 3" />
         </div>
         <div class="gallery-item">
-          <img src="gallery-image.png" alt="ECE Event 4" />
+          <img src="/assets/images/gallery-image.png" alt="ECE Event 4" />
         </div>
       </div>
     </section>
@@ -737,7 +745,7 @@ likesEl.forEach(el => {
     </div>
 
     <!-- contact section -->
-    <section id="contact" class="contact-section">
+    <!-- <section id="contact" class="contact-section">
       <h2>Contact Us</h2>
       <div class="contact-container">
         <div class="contact-info">
@@ -761,7 +769,9 @@ likesEl.forEach(el => {
           </iframe>
         </div>
       </div>
-    </section>
+    </section> -->
+
+    <%- include("partials/footer.ejs") %>
   </body>
   <script src="/scripts/particles.js"></script>
   <script src="/scripts/script.js"></script>

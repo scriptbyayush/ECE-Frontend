@@ -1,31 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="/styles/header.css" />
-</head>
-<body>
-  <nav class="navbar">
-    <div class="logo">
-      <img src="/assets/images/faculty-placeholder.jpg" alt="" >
-      E&CE
-    </div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#faculty">Faculties</a></li>
-      <li><a href="#students">Students</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="menu-toggle" id="menu-toggle">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-  </nav>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="/styles/header.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="/assets/images/faculty-placeholder.jpg" alt="logo" />
+        E&CE
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#students">Students</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/faq">FAQs</a></li>
+
+        <!-- Mobile Only Login -->
+        <li class="mobile-only">
+          <a href="/login" class="login-link">Login</a>
+        </li>
+      </ul>
+
+      <!-- Desktop Only Login -->
+      <div class="login-btn desktop-only">
+        <a href="/login" class="login-link" aria-label="Login to the portal"
+          >Login</a
+        >
+      </div>
+
+      <div class="menu-toggle" id="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </nav>
+
+    <script>
+      const toggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+    <script src="/public/scripts/script.js"></script>
+  </body>
 </html>
