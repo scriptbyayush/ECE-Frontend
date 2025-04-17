@@ -1,0 +1,17 @@
+<section class="notice-board">
+    <h2 class="gallery-title">📢 Latest Announcements</h2>
+    <br />
+
+    <div class="notice-filters">
+      <input type="text" id="search" placeholder="🔍 Search notices..." />
+      <select id="categoryFilter" onchange="filterNotices()">
+        <option value="">📂 All Categories</option>
+        <option value="Academic">🎓 Academic</option>
+        <option value="Events">🎉 Events</option>
+        <option value="Placements">🏢 Placements</option>
+        <option value="Other">📌 Other</option>
+      </select>
+    </div>
+
+    <div id="notices-container" class="notice-container"></div>
+</section>
