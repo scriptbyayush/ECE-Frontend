@@ -1,108 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ - Electronics and Computer Engineering</title>
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/faq.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/faq.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+
     <div class="faq-section">
-        <div class="faq-container">
-            <h1 class="faq-title">Frequently Asked Questions</h1>
-            <div class="search-container">
-                <input type="text" id="faqSearch" placeholder="Search questions...">
-                <i class="fas fa-search"></i>
-            </div>
-            
-            <div class="faq-categories">
-                <button class="category-btn active" data-category="all">All</button>
-                <button class="category-btn" data-category="admission">Admission</button>
-                <button class="category-btn" data-category="academics">Academics</button>
-                <button class="category-btn" data-category="facilities">Facilities</button>
-                <button class="category-btn" data-category="career">Career</button>
-            </div>
-
-            <div class="faq-accordion">
-                <!-- Admission Questions -->
-                <div class="faq-item" data-category="admission">
-                    <div class="faq-question">
-                        <h3>What are the admission requirements for the ECE program?</h3>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>To be eligible for admission to the ECE program, candidates must have completed 10+2 with Physics, Chemistry, and Mathematics with a minimum aggregate of 60%. Additionally, candidates must qualify in the university entrance examination.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item" data-category="admission">
-                    <div class="faq-question">
-                        <h3>What is the duration of the ECE program?</h3>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>The Bachelor's program in Electronics and Computer Engineering is a 4-year program divided into 8 semesters. Each semester typically lasts for 6 months.</p>
-                    </div>
-                </div>
-
-                <!-- Academics Questions -->
-                <div class="faq-item" data-category="academics">
-                    <div class="faq-question">
-                        <h3>What are the major specializations available in ECE?</h3>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our department offers specializations in VLSI Design, Embedded Systems, Communication Systems, Computer Networks, and Artificial Intelligence. Students can choose their specialization in the final year of the program.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item" data-category="academics">
-                    <div class="faq-question">
-                        <h3>What kind of projects do students work on?</h3>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Students work on various projects including IoT applications, Robotics, Signal Processing, Machine Learning applications, and Hardware Design. We encourage interdisciplinary projects that combine electronics and computer engineering concepts.</p>
-                    </div>
-                </div>
-
-                <!-- Facilities Questions -->
-                <div class="faq-item" data-category="facilities">
-                    <div class="faq-question">
-                        <h3>What laboratory facilities are available?</h3>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our department has state-of-the-art laboratories including Digital Electronics Lab, Microprocessor Lab, VLSI Lab, Communication Lab, and Computer Networks Lab. All labs are equipped with modern equipment and software tools.</p>
-                    </div>
-                </div>
-
-                <!-- Career Questions -->
-                <div class="faq-item" data-category="career">
-                    <div class="faq-question">
-                        <h3>What are the career prospects after completing ECE?</h3>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Graduates can pursue careers in various fields including VLSI Design, Embedded Systems, Telecommunications, Software Development, IoT, and Research & Development. Our department has strong industry connections and provides placement assistance.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item" data-category="career">
-                    <div class="faq-question">
-                        <h3>Does the department provide internship opportunities?</h3>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we have tie-ups with various industries and research organizations for summer internships. Students are encouraged to undertake internships during their summer breaks to gain practical experience.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="faq-container">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+        <div class="search-container">
+          <input type="text" id="faqSearch" placeholder="Search questions..." />
+          <i class="fas fa-search"></i>
         </div>
+
+        <div class="faq-categories">
+          <button class="category-btn active" data-category="all">All</button>
+          <button class="category-btn" data-category="admission">
+            Admission
+          </button>
+          <button class="category-btn" data-category="academics">
+            Academics
+          </button>
+          <button class="category-btn" data-category="facilities">
+            Facilities
+          </button>
+          <button class="category-btn" data-category="career">Career</button>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- Admission Questions -->
+          <div class="faq-item" data-category="admission">
+            <div class="faq-question">
+              <h3>What are the admission requirements for the ECE program?</h3>
+              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                To be eligible for admission to the ECE program, candidates must
+                have completed 10+2 with Physics, Chemistry, and Mathematics
+                with a minimum aggregate of 60%. Additionally, candidates must
+                qualify in the university entrance examination.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="admission">
+            <div class="faq-question">
+              <h3>What is the duration of the ECE program?</h3>
+              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                The Bachelor's program in Electronics and Computer Engineering
+                is a 4-year program divided into 8 semesters. Each semester
+                typically lasts for 6 months.
+              </p>
+            </div>
+          </div>
+
+          <!-- Academics Questions -->
+          <div class="faq-item" data-category="academics">
+            <div class="faq-question">
+              <h3>What are the major specializations available in ECE?</h3>
+              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Our department offers specializations in VLSI Design, Embedded
+                Systems, Communication Systems, Computer Networks, and
+                Artificial Intelligence. Students can choose their
+                specialization in the final year of the program.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="academics">
+            <div class="faq-question">
+              <h3>What kind of projects do students work on?</h3>
+              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Students work on various projects including IoT applications,
+                Robotics, Signal Processing, Machine Learning applications, and
+                Hardware Design. We encourage interdisciplinary projects that
+                combine electronics and computer engineering concepts.
+              </p>
+            </div>
+          </div>
+
+          <!-- Facilities Questions -->
+          <div class="faq-item" data-category="facilities">
+            <div class="faq-question">
+              <h3>What laboratory facilities are available?</h3>
+              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Our department has state-of-the-art laboratories including
+                Digital Electronics Lab, Microprocessor Lab, VLSI Lab,
+                Communication Lab, and Computer Networks Lab. All labs are
+                equipped with modern equipment and software tools.
+              </p>
+            </div>
+          </div>
+
+          <!-- Career Questions -->
+          <div class="faq-item" data-category="career">
+            <div class="faq-question">
+              <h3>What are the career prospects after completing ECE?</h3>
+              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Graduates can pursue careers in various fields including VLSI
+                Design, Embedded Systems, Telecommunications, Software
+                Development, IoT, and Research & Development. Our department has
+                strong industry connections and provides placement assistance.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="career">
+            <div class="faq-question">
+              <h3>Does the department provide internship opportunities?</h3>
+              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, we have tie-ups with various industries and research
+                organizations for summer internships. Students are encouraged to
+                undertake internships during their summer breaks to gain
+                practical experience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <section id="unique-comment-module">
+      <link rel="stylesheet" href="/styles/discussion.css" />
+      <h2 class="gallery-title">Discussion</h2>
+      <br />
+      <ul id="unique-comment-list">
+        <li class="unique-comment-item">
+          <div class="unique-comment">
+            <div class="unique-comment-img">
+              <img
+                src="https://rvs-comment-module.vercel.app/Assets/User Avatar.png"
+                alt="User Avatar"
+              />
+            </div>
+            <div class="unique-comment-content">
+              <div class="unique-comment-details">
+                <h4 class="unique-comment-name">Adamsdavid</h4>
+                <span class="unique-comment-log">20 hours ago</span>
+              </div>
+              <div class="unique-comment-desc">
+                <p>
+                  I genuinely think that Codewell's community is AMAZING. It's
+                  just starting out but the templates on there are amazing.
+                </p>
+              </div>
+              <div class="unique-comment-data">
+                <div class="unique-comment-likes">
+                  <div class="unique-comment-likes-up">
+                    <img
+                      src="https://rvs-comment-module.vercel.app/Assets/Up.svg"
+                      alt="Like"
+                    />
+                    <span>2</span>
+                  </div>
+                  <div class="unique-comment-likes-down">
+                    <img
+                      src="https://rvs-comment-module.vercel.app/Assets/Down.svg"
+                      alt="Dislike"
+                    />
+                    <span></span>
+                  </div>
+                </div>
+                <div class="unique-comment-reply">
+                  <a href="#!">Reply</a>
+                </div>
+                <div class="unique-comment-report">
+                  <a href="#!">Report</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <%- include("partials/footer.ejs") %>
+
     <script src="scripts/faq.js"></script>
-</body>
-</html> 
+  </body>
+</html>

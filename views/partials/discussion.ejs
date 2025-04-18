@@ -1,0 +1,84 @@
+<section id="unique-comment-module">
+  <link rel="stylesheet" href="discussion.css" />
+  <h2 class="gallery-title">Discussion</h2>
+  <br />
+  <ul id="unique-comment-list">
+    <li class="unique-comment-item">
+      <div class="unique-comment">
+        <div class="unique-comment-img">
+          <img
+            src="https://rvs-comment-module.vercel.app/Assets/User Avatar.png"
+            alt="User Avatar"
+          />
+        </div>
+        <div class="unique-comment-content">
+          <div class="unique-comment-details">
+            <h4 class="unique-comment-name">Adamsdavid</h4>
+            <span class="unique-comment-log">20 hours ago</span>
+          </div>
+          <div class="unique-comment-desc">
+            <p>
+              I genuinely think that Codewell's community is AMAZING. It's
+              just starting out but the templates on there are amazing.
+            </p>
+          </div>
+          <div class="unique-comment-data">
+            <div class="unique-comment-likes">
+              <div class="unique-comment-likes-up">
+                <img
+                  src="https://rvs-comment-module.vercel.app/Assets/Up.svg"
+                  alt="Like"
+                />
+                <span>2</span>
+              </div>
+              <div class="unique-comment-likes-down">
+                <img
+                  src="https://rvs-comment-module.vercel.app/Assets/Down.svg"
+                  alt="Dislike"
+                />
+                <span></span>
+              </div>
+            </div>
+            <div class="unique-comment-reply">
+              <a href="#!">Reply</a>
+            </div>
+            <div class="unique-comment-report">
+              <a href="#!">Report</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<script>
+  let likesUpParent = document.getElementsByClassName(
+    "unique_comment-likes-up"
+  );
+  let likesDownParent = document.getElementsByClassName(
+    "unique_comment-likes-down"
+  );
+
+  let likesEl = [];
+  for (let i = 0; i < likesUpParent.length; i++) {
+    let likesUp = likesUpParent[i].getElementsByTagName("img")[0];
+    let likesDown = likesDownParent[i].getElementsByTagName("img")[0];
+
+    likesEl.push(likesUp, likesDown);
+  }
+
+  likesEl.forEach((el) => {
+    el.addEventListener("click", function () {
+      let likesClosestCountEl =
+        this.parentElement.getElementsByTagName("span")[0];
+      let likesCount = likesClosestCountEl.innerText;
+
+      if (likesCount.trim().length === 0) {
+        let likesCount = 0;
+      }
+
+      likesClosestCountEl.innerText = +likesCount + +1;
+    });
+  });
+</script>

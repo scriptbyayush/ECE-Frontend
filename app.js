@@ -24,6 +24,10 @@ app.get("/login", (req, res) => {
   res.render("login.ejs");
 });
 
+app.get("/about", (req, res) => {
+  res.render("about.ejs");
+});
+
 // Start the Server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

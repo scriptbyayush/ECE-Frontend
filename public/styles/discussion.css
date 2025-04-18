@@ -2,7 +2,7 @@
 
 #unique-comment-module {
     width: 50%;
-    background: #001a33;
+    background: linear-gradient(135deg, #001a33, #00253e);
     margin: 100px auto;
     border-radius: 5px;
     padding: 50px 75px;

@@ -1,8 +1,11 @@
 /* FAQ Section Styles */
+body {
+    background: linear-gradient(135deg, #001a33, #00253e);
+}
+
 .faq-section {
     min-height: 100vh;
     padding: 80px 10%;
-    background: linear-gradient(135deg, #001a33, #00253e);
     color: white;
 }
 
